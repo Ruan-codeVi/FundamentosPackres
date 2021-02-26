@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virificador de Nacionalidade</title>
+    <style>
+        div#Nacion{
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Nacionalidade</h1>
+  Digite o País onde Você Nasceu <input type="text" id="txtpais">
+  <input type="button" value="verificar" onclick="verificar()">
+  <div id="Nacion"></div>
+  <script>
+      
+      function verificar(){
+      var pais = document.getElementById('txtpais');// vai pegar os elemento da txtpais e passar pra dentro dessa var
+      var res = document.getElementById('Nacion'); // vai pegar os elemento da div Nacion e passar pra dentro dessa var
+      var naci = (pais.value); // criou uma var naci, pra receber o input da var pais
+      if(naci == 'Brasil'||'brasil'){ // se var naci que ja =recebeu= um input da var pais igual a Brasil excuta o bloco 
+          res.innerHTML = 'Você é Brasileiro, Brbr';
+      } else{ // se a var naci recebeu input diferente de Brasil executa esse bloco
+          res.innerHTML = 'Você é estrangeiro <p><strong>Are you a foreigner</strong></p>';
+      }
+      /* A ordem foi: 1º Criar duas variaveis(pais,res) para guardar inputs
+                      2º Criada uma variavel naci para receber e validar o que foi guardado na
+                       var pais.
+                      3º Criar a condição composta com blocos
+        
+
+                      */
+    }
+  </script>
+</body>
+</html>

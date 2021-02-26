@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            background:blueviolet;
+            color: white;
+            width: 200px;
+            height: 200px;
+            font-size: 20pt;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+        
+
+</head>
+<body>
+<h1>Iniciando com DOM </h1> 
+<div id="area" > Interaja...</div>
+<!-- Daria para fazer os eventos onclick, onmouseover, onmouseout dentro da
+tag div após "area"  -->
+
+<script>
+    // Opção de usar os metedos addEventListener direto no Javascript
+    // variavel de escopo Global pode ser usada por qualquer function
+    //É do tipo Global essa variavel por estar fora dos blocos das functions
+    var area = document.getElementById('area');
+    area.addEventListener('click',clicar);
+    area.addEventListener('mouseover',entrar);
+    area.addEventListener('mouseout', sair)
+    
+    function clicar(){    
+area.innerText = 'Clicou Ganhou $$';
+area.style.background ='red';
+    } function entrar(){
+        area.innerText = 'Entrou!'
+        area.style.background = 'green';
+    } function sair(){
+        area.innerText='Saiu =('
+        area.style.background= 'blueviolet';
+    }
+</script>
+</body>
+</html>

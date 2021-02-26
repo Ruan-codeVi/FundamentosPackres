@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+    <style>
+        body{
+            font: normal 18pt arial;
+        } input{
+            font:normal 18pt arial;
+            width: 100px;
+        } div#result{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="somar" onclick="somar()">
+    <div id="result">Resultado</div>
+    <script>
+        function somar(){ /*
+        Criando uma somar que vai pegar os dois imput txtn1 e txtn2
+        e vai guardar nas variaveis*/ 
+            var tn1 =  window.document.getElementById('txtn1');// daria pra usar o querySelector
+            var tn2 = window.document.getElementById('txtn2');// daria pra usar o querySelector
+            var result = window.document.getElementById('result');
+            /*Criando Duas novas variaveis para pegar string, passar pra fazer conversão*/ 
+            var numb1 = Number(tn1.value);
+            var numb2 = Number(tn2.value);
+           var resultado = numb1 + numb2;
+           result.innerHTML = `A soma entre ${numb1} e ${numb2} é igaul a <strong> ${resultado}</strong>`;
+        }
+
+        
+        
+    </script>
+</body>
+</html>

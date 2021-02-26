@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        div #res{
+            font: normal 15pt arial;
+            color: rgb(214, 190, 190);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas DETRAN</h1>
+    Velocidade do carro <input type="number" name="txtvel" id="txtvel"> KM/h;
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular(){
+        var txtV = document.getElementById('txtvel'); // poderia usar querySelector(input#txtvel)
+        var velocidade = Number(txtV.value); /* Essa variavel velocidade ta recebendo o input dado na var txtV que é texto,
+       e ta transformando em número */
+       var res= document.getElementById('res'); // criando a var res
+        res.innerHTML = `Sua velocidade atual é de <strong> ${velocidade}KM/h </strong>` // liga a var res com html atraves do innerHTML que recebe a var velocidade
+        if(velocidade>80){
+            res.innerHTML += `<p>Você ultrapassou o limite de velocidade ,<strong> Multado!</strong></P>`; 
+        }
+        }
+
+
+    </script>
+</body>
+</html>
