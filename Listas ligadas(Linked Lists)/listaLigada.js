@@ -9,7 +9,7 @@ function ListaLigada(){
         this.proximo = null
     }
 
-    let tamanho = 0
+    let tamanho = 0 // 1
     let cabeca = null // não mais null recebe no: Joao,Maria
 
     this.acrescentarFinal = function(elemento){ //joao
@@ -121,7 +121,7 @@ não proximo é null, então sai o laço
 
 16 atual.proximo recebe o valor contido na nova instancia passada para a var no: lucas, null
 elemento = joao
-                --> Joao.Lucas ou seja a propriedade próximo de João recebe lucas
+                --> Joao.Lucas ou seja a propriedade próximo de João recebeu lucas
 proximo = lucas 
 
 17 tamanho aumenta em 1
@@ -138,10 +138,28 @@ a var atual reinicia undefined
 
 21 Na condição if var cabeca não é igual a null é false, entao passa para else
 
-22 atual que reinicio em undfined agora recebe cabeca
+22 atual que reiniciou em undfined agora recebe cabeca
 atual = joao,lucas
 
-23 indo para laço while verifica atual.proximo
+23 indo para laço while verifica atual.proximo(joao,Lucas) é verdadeiro
+sim            var atual
+        this.elemento = joao
+        this.proximo = Lucas
+
+24 Atual joao,lucas recebe uma chamada da propriedade proximo do NoConstrutor
+     var atual
+        this.elemento = joao
+        this.proximo = Lucas  + this.proximo = null = lucas,null
+
+25 var atual tem joao,lucas,null o laço while repete e verifica atual.proximo é verdadeiro?
+não pq this.proximo recebeu um null então sai do laço while
+
+26 então a var atual joao,lucas,null  recebe na propriedade this.proximo  que tem null 
+a instancia de no que é Maria
+
+joao,lucas,null -> Joao, Lucas, Maria
+
+27 var tamanho aumenta mais um
 
 
 */ 
