@@ -96,8 +96,27 @@ function ListaLigada(){
     // Remover o elemento passado como parametro
     }
 
-    this.indexOf = function(elemento){
+    this.indexOf = function(elemento){//Ana
     // Retorna a posição do elemento
+    // Esse método reseta todas a variaveis menos cabeca
+        let atual = cabeca, // no0(luciano)
+        index = 0
+
+        while (atual) { // true pq é diferente de null 
+            if(elemento === atual.elemento){
+            //1º paramet(Ana) é igual no0(luciano)? false
+            //2º param(Ana) é igual no1(joão)? false
+            //3º param(Ana) é igual no2(Ana)? true
+                return index // 2
+            }
+            index++ // 1 2
+            atual = atual.proximo 
+            //1º atual recebe no1(joão)
+            //2º atual recebe no2(Ana)
+
+            //repete laço
+        }
+        return -1
     }
     this.estaVazio = function(){
     // Retorna se está vazio ou não a instância
@@ -134,7 +153,8 @@ listaLig.print()
 listaLig.enserirPosicao(0,'Luciano')
 listaLig.enserirPosicao(2,'Ana')
 listaLig.print()
-
+console.log(listaLig.indexOf('Ana'))
+console.log(listaLig.indexOf('João'))
 /* Debug
 
 Método acrescentarFinal
