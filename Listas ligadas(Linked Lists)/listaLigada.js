@@ -94,6 +94,8 @@ function ListaLigada(){
     
     this.removerElemento = function(elemento){
     // Remover o elemento passado como parametro
+    let index = this.indexOf(elemento)
+    return this.removerPosicao(index)
     }
 
     this.indexOf = function(elemento){//Ana
@@ -120,10 +122,15 @@ function ListaLigada(){
     }
     this.estaVazio = function(){
     // Retorna se está vazio ou não a instância
+        return tamanho == 0
     }
 
-    this.tamanhoInstan = function(){
-    // Retorna o tamanho da instãncia
+    this.tamanho = function(){
+    // Retorna o tamanho da lista
+        return tamanho
+    }
+    this.buscarCabeca = function(){
+        return cabeca
     }
     this.toString = function(){
         // Converte em string
@@ -155,6 +162,12 @@ listaLig.enserirPosicao(2,'Ana')
 listaLig.print()
 console.log(listaLig.indexOf('Ana'))
 console.log(listaLig.indexOf('João'))
+listaLig.print()
+console.log(listaLig.removerElemento('João'))
+listaLig.print()
+console.log(listaLig.estaVazio())
+console.log(listaLig.tamanho())
+console.log(listaLig.buscarCabeca())
 /* Debug
 
 Método acrescentarFinal
