@@ -30,14 +30,65 @@ function ListaLigada(){
         
         tamanho++
     }
-
+                                    // 0,   'Luciano'
+                                    // 1,   'Ana'
     this.enserirPosicao = function(posicao, elemento){
     //Adicona um elemento em uma posição especifíca da lista
+    if(posicao >= 0 && posicao <= tamanho){ //range: 0 a 3 
+                                            //+ um elemento 0 a 4 
+        let no = new NoConstrutor(elemento),// novo obj: 0, luciano em no
+                                           // novo Obj: 1, Ana em no
+        atual = cabeca,//no1(joao)
+        // cabeca não é mais no1(joao) agora é luciano
+        anterior, // undfined
+        index = 0
+        //  0 1
+        if(posicao === 0 ){ // true / false
+            no.proximo = atual // instancia.proximo recebe no1(joao)
+            cabeca = no // cabeca recebe luciano an posicão 0
+        }else{
+            //     0           1
+            while(index++ < posicao){//true
+                anterior = atual // anterior recebe luciano
+                atual = atual.proximo
+            }
+            no.proximo = atual
+            anterior.proximo = no
+        }
+        tamanho ++
+        return true
+    }else{
+        return false
     }
-
-    this.removerPosicao = function(posicao){
+}
+/* no1 = jao
+   no2 = lucas
+   no3 = maria
+*/ 
+    this.removerPosicao = function(posicao){// 0 
     // Remove um elemento em uma posição especifíca da lista
+    if(posicao > -1 && posicao < tamanho){ // 0 true
+        let atual = cabeca, //no1
+        anterior, //undfined
+        index = 0
+        //  0 1
+        if(posicao === 0){// true / false
+            cabeca = atual.proximo // no1 recebe no2
+            //no1 = joao deixa de existir
+        }else{
+            while(index++ < posicao){// 0 < 1 true
+                anterior = atual //no1
+                atual = atual.proximo // no1 recebe no2
+            }
+            anterior.proximo = atual.proximo
+        }
+        tamanho -- // decremento saiu no1(joao)
+
+        return atual.elemento // retorna o elemento eliminado
+    }else{
+        return null
     }
+}
     
     this.removerElemento = function(elemento){
     // Remover o elemento passado como parametro
@@ -75,6 +126,11 @@ let listaLig = new ListaLigada()
 listaLig.acrescentarFinal('João')
 listaLig.acrescentarFinal('Lucas')
 listaLig.acrescentarFinal('Maria')
+listaLig.print()
+console.log(`Elemento eliminado foi ${listaLig.removerPosicao(1)}`)
+listaLig.print()
+listaLig.enserirPosicao(0,'Luciano')
+listaLig.enserirPosicao(1,'Ana')
 listaLig.print()
 
 /* Debug
