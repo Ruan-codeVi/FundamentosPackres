@@ -114,3 +114,68 @@ function tempohandler(){
     console.log('ola')
 }
 setTimeout(tempohandler, 500)// sem função anonima
+
+// Exemplo de código sincrono
+/* Funções como map, filter, reduce, flatMap, every,
+ some e includes todas essas usam funções de callback
+*/ 
+
+// MAp
+//Como seria se fossemos dobrar esse valores do array.
+
+//Forma Procedural(Passo a Passo)
+const numeros = [1,5,3,9,7]
+const numerosDobrad = []
+for(let i = 0; i < numeros.length; i++){
+    numerosDobrad.push(numeros[i] *2)
+}
+console.log(numerosDobrad)
+
+// Refatoração e uma função para dobrar qualquer array
+
+function dobrarArray (array){
+    const numerosDobrados = []
+    for(let i = 0;i < array.length; i++){
+        numerosDobrados.push(array[i]* 2)
+    }
+    return numerosDobrados
+}
+console.log(dobrarArray([5,2,3]));
+console.log(dobrarArray([1,10,22,24]))
+
+/* Mesmo tendo um função que dobre qualquer Array 
+que for passado como argumento para a função, ele limita muito
+pq só dobra a cada nova ação que fosse criada teria que mudar essa função
+*/
+
+//Refatoração da função acima, recriando a função Map nativa do js 
+
+function map(arraY, fncallback){
+    const arrayResult = []
+    for(let i = 0;i < arraY.length; i++){
+        arrayResult.push(fncallback(arraY[i]))
+        // arrayResult vai receber os argumentos que irao ser passados para a função map quando for invocada
+    }
+    return arrayResult
+}
+
+//retornando um array do obj dentro da função anon
+console.log(
+    map([5,7,10],function(valor){//chamando a função passando os argumentos: Um array e Uma função anonima
+        return({data: valor * 2}) 
+    })
+)
+
+// Agora pode customizar
+console.log(
+    map([5,7,10],function(valor){//chamando a função passando os argumentos: Um array Uma função
+        return  valor /2 
+    })
+)
+
+//retornando uma string
+console.log(
+    map([5,7,10],function(valor){//chamando a função passando os argumentos: Um array Uma função
+        return `Valor é ${valor}` 
+    })
+)
