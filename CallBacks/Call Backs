@@ -1,0 +1,130 @@
+Call Backs São basicamento funções que foram passadas como argumentos de outras funções
+
+Cenarios de Call Back
+
+EXEMPLO DE CALL BACKS EM CODIGOS ASSINCRONOS
+
+Eventos Dom			funç anon.
+btn.addEvemtListener('click'function(event){ "Invocando a função addEvemtListener que recebe como primeiro argumento argumento uma string e
+					      segundo argumento uma função ou referencia de uma função"
+// Ação no click
+});
+
+Funções do Array
+
+1. Map	
+	     arrow funct
+[2,5,3,4].map(v => v *2) "Invocando a função map e passando uma arrow function como argumento, que vai pegar os valores do array armazenar 				  em v,  depois vai multiplicar por 2"
+
+
+Funções de Tempo
+
+ 1. setTimeout
+ 
+ setTimeout(function(event){ "invocando a função setTimeout passando como primeiro argumento uma função anõnima e como segundo argumento 				      passamos o tempo em milisengundos" 				      
+ //executa depois de 500 ms
+ }, 500)
+
+_______________________________________________________________________________________________________________________________________
+Promisses (Que tbm são callbacks)
+
+getUsuarios().then(function(listaUsuarios){  "invocando a função then passando como argumento uma função anonima que vai ser chamada console.log(listaUsuarios		      toda vez que chegar uma lista de usuarios "
+
+})
+
+Sem função anonima
+
+function carregaUsuarios(listaUsuarios){
+console.log(listaUsuarios)	
+}
+
+getUsuarios().then(carregaUsuarios)
+_______________________________________________________________________________________________________________________________________
+
+Com rotas utilizando libs para backEnd
+
+app.post('/produtos', function(dadosReq, dadosResp){  "Na função post é passado como argumento a string que é a rota 'produtos' os segundp 							       argumento é passar uma função anonima com o primeiro  parametro contendo os dados 							       da requisição"
+
+})
+
+
+
+
+EXEMPLOS DE CALL BACKS EM COD SINCRONOS
+
+FUNÇÕES: MAP, FILTER, REDUCE, FLATMAP, EVERY, SOME E INCLUDES
+
+
+
+
+CUIDADO COM CALL BACKS HELL (ou codigo haduken)
+
+req1('data',function handle1(){
+ req2('data',function handle2(){
+  req3('data',function handle3(){
+   req4('data',function handle4(){
+    req5('data',function handle5(){
+
+        })
+      })
+    })
+  })	
+})
+
+COMO RESOLVER CALL BACK HELL
+1 Não passar muitas vezes funções anonimas como argumento para outras funções, criar as função com nome e passar só a referencia da função como argumento
+
+2 Tentar usar promisses
+
+3 Tentar usar async/await.
+
+
+Refotorando...
+
+
+function handle1(){
+req2('data'handle2)
+}
+
+function handle2(){
+req3('data'handle3)
+}
+
+function handle3(){
+req4('data'handle4)
+}
+
+function handle4(){
+req5('data'handle5)
+}
+
+function handle5(){
+// ação aqui
+}
+// invocando a req1
+
+req1('data' handler1) 	" A  função requisição 1 (req1) no primeiro argumento recebe uma string no segundo argumento recebe uma função 	  				handler1 ou seja uma call back de handler1 que desencadeia esse processo até que não tenha mais funções sendo 				passadas como argumentos para outras funções"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

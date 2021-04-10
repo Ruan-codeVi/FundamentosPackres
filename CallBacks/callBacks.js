@@ -1,5 +1,5 @@
 /* Callbacks Function são funções que vão ser chamadas
-depois. São tambem cidadoes de primeira classe
+depois. São tambem cidadões de primeira classe
 
 HOF(High order Functions): São funções que recebem outras função como parametro ou retornam outras funções
 */ 
