@@ -122,7 +122,8 @@ setTimeout(tempohandler, 500)// sem função anonima
 
 // MAp
 //Como seria se fossemos dobrar esse valores do array.
-
+{
+// Colocar chaves fecha um o escopo novo e pode-se criar novas variaveis e array com os mesmos nomes
 //Forma Procedural(Passo a Passo)
 const numeros = [1,5,3,9,7]
 const numerosDobrad = []
@@ -131,7 +132,7 @@ for(let i = 0; i < numeros.length; i++){
 }
 console.log(numerosDobrad)
 
-// Refatoração e uma função para dobrar qualquer array
+// Refatoração, criando uma função para dobrar qualquer array
 
 function dobrarArray (array){
     const numerosDobrados = []
@@ -179,3 +180,68 @@ console.log(
         return `Valor é ${valor}` 
     })
 )
+}
+//Numeros pares
+const numeros = [2,9,10,3,5,8]
+const numerosPares = []
+
+for(let i = 0; i<numeros.length; i++){
+    if(numeros[i] % 2 ==0){
+        numerosPares.push(numeros[i])
+        
+    }
+}
+console.log(numerosPares)
+
+// Refatorando, Criando uma função para dar flexibilidade podendo manipular os arrays como quiser
+
+function filter(arr, fnCallBack){
+    const arrayResult = []
+
+    for(let i =0; i < arr.length; i++){
+        if(fnCallBack(arr[i])){ // a função fnCallBack está sendo invocada e estamos passando um valor pra ele 
+        // esta puxando qualquer info de qualquer array passado como argumento para a função
+            arrayResult.push(arr[i])
+        }
+    }
+    return arrayResult
+}
+// Pares
+console.log(
+    filter([9,10,14,17,22,11], function(valor){
+        return (valor % 2) ===0
+    })
+)
+
+// Impares
+console.log(
+    filter([9,10,14,17,22,11], function(valor){ // com função anonima
+        return (valor % 2) !==0
+    })
+)
+
+/* 
+TRECHO ACIMA SEM FUNÇÕES ANONIMAS
+
+function ePar(valor){
+return (valor % 2) ===0
+}
+console.log(
+    filter([9,10,14,17,22,11],ePar))
+
+function eImpar(valor){
+return (valor % 2) !==0
+} 
+console.log(
+    filter([9,10,14,17,22,11],eImpar))  
+*/
+
+/* COM ARROW FUNCTIONS
+console.log(
+    filter([9,10,14,17,22,11], valor => (valor %2) ===0)
+)  
+
+console.log(                   argum    funç  bloco da funç
+    filter([9,10,14,17,22,11], valor    =>   (valor %2) !==0)
+)
+*/ 
