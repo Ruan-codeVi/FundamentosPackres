@@ -67,7 +67,7 @@ console.log(nomeMinusculos)
  
 */ 
 
-const arrayNumeros = [2,8,-10,-15,17,16,-20,10]
+const arrayNumeros = [2,8,-10,-15,27,16,-20,10]
 {
 const numerosNegativos = arrayNumeros.filter(function(negativos){
     return negativos < 0
@@ -114,3 +114,41 @@ console.log('Com filter', numerosFiltradosDivPosi);
 const numerosFiltradosDivPosi = arrayNumeros.filter(numDivPosi => numDivPosi % 2 === 0 
 && numDivPosi > 0);
 console.log('Com filter + Arrow function', numerosFiltradosDivPosi);
+
+/* Utilizando map e filter juntos, 
+por exemplo pegar no arrayNumeros numeros impares 
+e depois multiplicar esses valores por 2
+*/
+{
+const metodosCombin = arrayNumeros.filter(function(valores){
+ return valores % 2 != 0
+}).map(function(valores){
+    return valores * 2
+})
+console.log('Filter + map',metodosCombin)
+}
+// Com Arrow Function
+const metodosArrayCombin = arrayNumeros.filter(
+    valores => valores % 2 != 0).map(valores => valores * 2);
+console.log(`filter + map com Arrow Function ${metodosArrayCombin}`)
+
+// Somar todos os numeros do arrayNumeros do jeito comum
+let soma = 0;
+// {
+// for(let i = 0; i < arrayNumeros.length; i++){
+//     if(arrayNumeros[i] > 0){
+//         soma = soma + arrayNumeros[i]
+//     }
+// }
+// console.log('Iterando com for', soma)
+// }
+// Utilizando o Reduce para somar todos valores do ArrayNumeros
+/* Explicando reduce:
+*/ 
+const arrayNumeros1 =[-10,2,8,11];
+const somaReduce = arrayNumeros1.reduce(function(valorAcumulador, valorArray){
+     if(valorArray > 0){ 
+   return valorAcumulador + valorArray
+}
+},0)
+console.log('Deu certo?',somaReduce)
