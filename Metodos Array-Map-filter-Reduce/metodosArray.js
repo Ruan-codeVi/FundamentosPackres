@@ -145,10 +145,10 @@ let soma = 0;
 // Utilizando o Reduce para somar todos valores do ArrayNumeros
 /* Explicando reduce:
 */ 
-const arrayNumeros1 =[-10,2,8,11];
+const arrayNumeros1 =[10,2,8,11];
 const somaReduce = arrayNumeros1.reduce(function(valorAcumulador, valorArray){
-     if(valorArray > 0){ 
+     
    return valorAcumulador + valorArray
-}
+
 },0)
-console.log('Deu certo?',somaReduce)
+console.log('Reduce',somaReduce)
