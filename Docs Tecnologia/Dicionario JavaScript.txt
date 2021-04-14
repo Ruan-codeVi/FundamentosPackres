@@ -1,0 +1,241 @@
+Variaveis diferença
+Var - Maneira antiga
+let - Maneira mais atual de criar uma variável, pode alterar os valores da variavel
+const - É para valores constantes, que não vão ser alterados futuramente.
+
+
+TIPOS PRIMITIVOS JAVASCRIPT EXISTEM DOIS TIPOS;
+Valores
+let nome ='rafael' // string literal (cadeia de letras juntas)
+let idade = 25 // number literal (valores)
+let estaAprovado = true // boolean (faz teste de Verdadeiro ou falso)
+let sobreNome = ; // Undefined (Valor não está definido)
+let corFundo = null // reseta algum valor
+Referência
+Objetos
+function
+Array
+
+OBJETO EM JAVASCRIPT
+È a criaçaõ de novas coisa utilizando varias informações diferentes dando origem a uma nova coisa
+Exemplo:let nome = 'rafeal'
+	let idade = 27	
+	let soobreNome = 'souza'
+
+Criando o Objeto Pessoa vai pegar todas essas variaveis e juntar
+
+
+
+O sinal de + pode ser Concatenação ou sinal de soma, se for dado do tipo string o sinal de (+) concatenação
+
+Template de Stringção
+`texto ${variavel ou objeto} texto ${variavel ou objeto}...`
+
+Convertendo a string do prompt para numero de duas maneiras, ParsInt e Number
+Number faz a conversão automatica pelo Js
+
+Para converter numero para string (texto) tem duas maneiras:
+ String(o valor que quiser converter) ou valorQualquer.toString()
+
+Formatação de Numeros
+Mostrando duas casa depois de virgula
+nome da variavel.toFixed(2 ou 4 etec..)
+Formatação de Numeros
+1542.50, como trocar o ponto por virgula
+
+nomeVariavel.toFixed(2).replace('.', ','); 
+.replace ('trocar algo', 'por outra');
+1542,50
+
+Transformar um valor numero para salário
+nomeVariavel.toLocaleString('pt-Br', {style: 'currency', currency:'BRL'});
+
+Operadores Matematicos em JavaScript	Ordem de Precedência( Ordem de resolução)
++ SOMA					1º () O que estiver dentro de Parenteses
+- SUBTRAÇÃO				2º ** EXPONENCIAÇÃO 
+* MULTIPLICAÇÃO				3º * MULTIPLICAÇÃO, / DIVISÃO INTEIRA, % DIVISÃO COM RESTO	
+/ DIVISÃO INTEIRA			4º + SOMA, - SUBTRAÇÃO	
+% DIVISÃO COM RESTO
+** EXPONENCIAÇÃO  
+
+AUTO ATRIBUIÇÃO
+VAR	RECEBE	VALOR 	 							Auto Atribuição: SIMPLIFICADA
+var n    = 	3   A variavel N recebe o valor 3				VAR  OPERADOR RECEBE VALOR	
+var n 	 = 	n+4  A variavel N que valia 3 agora recebe +4, agora N vale 7	var n += 4  (È a mesma coisa que n:'vale 3' = n+4 [var n: vale 7 agora])
+var n 	 =	n-5  A variavel N que vale 7 agora recebe -5, agora N vale 2	var n -= 5  (È a mesma coisa que n:'vale 7' = n-5 [var n: vale 2 agora])
+var n	 =	n*5  A variavel N que vale 2 agora recebe *5, agora N vale 10	var n *= 5  (È a mesma coisa que n:'vale 2' = n*5 [var n: vale 10 agora])
+										Resultado a variavel N: vale 10
+
+OPERADOR DE INCREMENTO							     OPERADOR DE INCREMENTO: SIMPLIFICADA
+VAR	RECEBE 	VALOR  								VAR OPERADOR OPERADOR Pós incremento: x++
+										Pós decrimento: x--
+var x	  =	5  A variavel x recebe o valor 5				var x = 5
+var x	  =    x+1 A variavel x que valia 5 agora recebe +1, agora x vale 6	var x++ (É a mesma coisa que x:'vale 5' = x+1 [var x: vale 6 agora])
+var x	  =    x-1 A variavel x que valia 6 agora recebe -1, agora x vale 6	var x--	(É a mesma coisa que x:'vale 6' = x-1 [var x: vale 5 agora])		
+     										pré incremento:
+										var ++x
+										var --x
+
+OPERADORES RELACIONAIS  * Operadores Relacionais sempre vão retornar
+> maior			valores boleanos verdadeiro ou falso (true or False)
+< menor
+>= maior ou igual a		OPERADORES RELACIONAIS identidade
+<= menor ou igual a		  5==5 true (5 é igual a 5? sim) 
+== igual			  5=='5'true (5 num é igual a 5 string? sim o
+!= diferente			o javascript entende que eles tem a mesma grandeza, apesar de
+				serem de tipos diferentes
+				5==='5' false (5 num é idêntico a 5 strig? não, apesar de terem a mesma grandeza são
+				de tipos diferentes. 
+Operadores Lógicos
+ ! negação: tem valor unario algo que é ! true (não verdade é false) e vice versa
+ && conjunção (e): tem valor binário onde as duas condições tem que ser verdadeiras
+ || disjunção (ou): tbm tem valor binário onde só é false, se as duas condições forem falsas
+
+Operador Ternário
+?: Ele junta três operandos
+ Estrutura: Teste?true:false
+
+No teste tem teste ele executa verdadeiro ou falso, se der verdadeiro (true) ele executado uma função
+se der falso (false) ele executa outra função
+
+Precedência dentro de uma expressão
+1º Operadores Matemáticos
+1.()PARENTESES
+2.**EXPONENCIAÇÃO
+3.* MULTIPLICAÇÃO, / DIVISÃO INTEIRA, % DIVISÃO COM RESTO
+4.+ SOMA, - SUBTRAÇÃO
+2º Operadores Relacionais
+> MAIOR, < MENOR, >= MAOIR OU IGUAL A, <= MENOR OU IGUAL A, == IGUAL, != DIFERENTE
+3º Operadores Lógicos
+1. !NEGAÇÃO
+2. && (E)
+3. || (OU)
+
+
+EVENTOS: o que são:
+  Eventos: São ações que um ou objetos podem realizar 
+  Para acontecer um evento é necessário criar/tratar uma function/Função
+  Functions/Funcões: É uma acão criada para disparar comandos.
+ Composta de function o nomeDoEvento(){} chamado de {Blocos} que só vão acontecer 
+  quando esse evento ocorrer, essas function blocos com os comando não são  executados sozinhos. Só 
+após que ocorrer o evento.
+exemplo:
+
+ Em javaScript um bloco é delimitado entre {chaves}, e tem que ser nomeado
+antes como uma function/função 
+ A ordem é function + nomeDoEvento(pode ser vazio,ter codições ou terem parametros){Bloco}
+Exemplo function clicar(){
+    ações vão aqui
+} -->
+<body>
+<h1>Iniciando com DOM </h1> 
+" Foran criados os eventos onclick,onmouseenter, onmouseout que receberão as funções clicar(), 
+entrar(), sair() "
+<div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">Interaja...</div>
+
+<script> 
+ var area = document.getElementById('area'); 
+   Essa variavel area é de escopo global, pode ser usada por qualquer function 
+    pq está fora das functions. 
+
+     Criada a variavel area, onde vai receber o document.get que vai pegar essa variavel area e identifica-la como objeto
+    para poder ser usada e modificada,
+    para no final o parametro innertext possa modificar o texto original dessa div
+    recebendo um novo valor nesse objeto id area
+
+    A ordem é: 1º criou evento qualquer declara a Ação entre aspas "Ação()"
+    2º Depois cria-se a function + nome da Ação() que ja foi criada no evento.
+    3 ºDepois cria-se o bloco que ira realizar ações, só depois que o evento foi
+    disparado  */ 
+   
+     function clicar(){
+ area.innerText ='Clicou Ganhou!';
+    }
+    function entrar(){
+area.innerText = 'Entrou!'
+    }
+    function sair(){
+        area.innerText = 'Saiu!'
+    }
+
+</script>
+</body>
+
+TIPOS DE CONDIÇÃO
+Condição Simples só tem IF		Condição Composta tem IF e ElSE
+if(vazio, condição ou parametro) { 	if(vazio, condição ou parametro) {
+}					} Elseif(vazio, condição ou parametro) { 
+					}
+
+CONDIÇÕES ANINHADAS
+È a estrutura que permite multiplas condições dentro de outras condições, tambem chamadas de else if
+e podem ter inumeras
+if( SE isso acontecer faça isso){
+o que pode acontecer: possibiliadades
+}else if ( SE Nao SE faça isso){
+o que pode acontecer: possibiliadades
+} else if(){... Assim vai quantas vezes for necessaria até o Else
+
+CONDIÇÕES MULTIPLAS
+Ela serve para valores Fixos, que são usadas para trabalhar valores fixos.
+OBS: ELA NÃO SERVI PARA INTERVALOS DE VALORES COMO IF's E ELSE's
+*Essa condição é muito util para situações pontuais.
+*Essa estrutura é Representada pelo Comando switch(expressão){chaves}
+*Dentro das chaves coloca-se um valor de cade vez, que são chamandos de case.
+*Caso os case não atenderem a expressão pode-se colocar o default.
+*Pode ter quantos case quiser.
+*Para cada bloco de case é obrigatorio colocar um break
+*Ela só funciona com números inteiros e Strings
+
+
+Exemplo: switch(expresão){
+case valor1:
+possibilidades...
+break
+
+case valor2:
+possibilidades...
+break
+
+case valor3:
+possibilidades...
+break
+
+default:
+possibilidades...
+break
+}
+
+Estrutura de Repetição em js são três
+
+while(enquanto) - com repetições com teste lógico no inicio
+Enquanto a condição for verdadeira o while executa o que tiver dentro do bloco{}
+while(condição){
+
+}
+
+do while (faça enquanto) - com repetições com teste lógico no final
+Executa o bloco enquanto a condição for verdadeira:
+do{
+
+}while(condição)
+
+for -  com repetições com variavél de controle
+Da inicio faz o teste logico, se for verdadeira ele executa o bloco e logo depois incrementa e repete para fazer o teste logico e repete até ser falso:
+for(inicio:teste:incr){
+
+}
+
+VARIAVIES COMPOSTAS ou ARRAY ou VETORES
+São campazes de armanezar vários valores em uma mesma estrutura Chamados de Array
+
+Serve para incurtar linhas de codigos quando se trata de um mesmo tipo de variavél com valores diferentes.
+
+Difinição Array ou Vetor ou Variavel composta: É uma variavel composta por vários elementos, cada elemento é composto por seu valor e uma chave de indentificação.
+exemplo:
+let num = [5,8,4], essa variavel num guarda "5 8 4 "
+
+num [5,8,3]  posições 0 1 3
+
+num [5,8,4]
+posi 0 1 3
