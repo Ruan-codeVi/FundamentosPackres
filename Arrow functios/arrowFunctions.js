@@ -44,3 +44,23 @@ document.addEventListener('click', function(){
 // Com arrow Funct anonima
 document.addEventListener('click',()=> console.log('ciico'))
 // * quando não tem parametro é só passar parenteses() vazio.
+
+// Diferença ao this: Fuções e Arrow Functions
+
+/* this em função anonima ou com nome: Quando nos criamos uma função, 
+essa função cria um contexto novo
+então se utilizarmos um this dentro da função anonima ou não
+o this vai tar referenciado a essa função somente
+
+this em uma Arrow: Quando nos usando o this dentro da arrow function, esse this
+está se referenciando ao contexto externo da Arrow function
+*/
+
+// Exemplo
+let funcaoAnonima = function(){
+    //novo COntexto
+    // this se refere a essa função somente
+} 
+let funcaoArrowFun = ()=>{
+    //this se refere ao contexto global
+}
