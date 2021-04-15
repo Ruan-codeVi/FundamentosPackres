@@ -163,16 +163,16 @@ let todoMaiores = arrayQualquer.every(function(elemento){
     return elemento > 10
 })
 console.log(todoMaiores)}
-// Com arrow function
-{
+
+{ // Com arrow function
 let todoMaiores = arrayQualquer.every(elemento => elemento >10)
 console.log('Arrow Func',todoMaiores)
 }
 // Mais um exemplo
-//Verificando se todos tem mais de 18 anos
+//Verificando se todos têm mais de 18 anos
 
 let pessoas = [ //Array de obejtos
-    {id: 12, nome:'joao', idade: 19},
+    {id: 12, nome:'joao', idade: 15},
     {id: 19, nome:'pedro', idade: 27},
     {id: 20, nome:'lucas', idade: 22},
     {id: 25, nome:'joana', idade: 27},
@@ -184,8 +184,20 @@ const marioresP = pessoas.every(function(pessoa){
 })
 console.log('every com funct anonima', marioresP)
 }
+{
 const marioresP = pessoas.every(pessoa => pessoa.idade >= 18)
 console.log('every com Arrow funct',marioresP)
+}
 
 
+// some: ele intera o array e testa se pelos menos um elemento é verdadeiro para retorna true
+{
+const marioresP = pessoas.some(function(elemento){
+    return elemento.idade >= 18
+})
+console.log('some com funct call back',marioresP) 
+}
+// Com Arrow funct
+const marioresP = pessoas.some(elemento => elemento.idade >= 18)
+console.log('some com Arrow funct',marioresP)
 
