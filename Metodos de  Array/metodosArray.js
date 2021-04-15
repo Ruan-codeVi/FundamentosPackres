@@ -18,13 +18,14 @@ for(let i = 0; i < numeros.length; i++){
     numerosDobrado.push(numeros[i] * 2)
 }
 console.log(numerosDobrado)
+// _____________________________________________________________
 
 /*  Map é um metodo de um Array,
     e espera um função de callBack como
     argumento
 */ 
 
-/* Map:  1 Pega o array e intera ele um a um igual no for 
+/*Método Map():  1 Pega o array e intera ele um a um igual no for 
          2 Aplica a função com instrução 
          3 retorna o novo Array
 */
@@ -58,9 +59,9 @@ const nomeMinusculos = nome.map(nomesP => nomesP.toLowerCase())
 console.log(nome)  
 console.log(nomeMinusculos)
 
+// _________________________________________________________________________________________________________
 
-
-/* filter: faz a mesma lógica do map, mas na função passada como callback
+/* Método filter(): faz a mesma lógica do map, mas na função passada como callback
  essa função tem que retornar um novo array objeto. 
  Porque o filter vai filtrar todo a array, e fazer um novo array a partir dos
  valores que fora analisados como true
@@ -87,8 +88,6 @@ console.log('filter Negativos + plus Arrow Function * Sem const ',arrayNumeros.f
     só usando laço for para interar. Pegando só numeros do array que são
     divisiveis por 2 e positivos.
  */
-
-
 
 { //criando escopo
 
@@ -132,6 +131,7 @@ const metodosArrayCombin = arrayNumeros.filter(
     valores => valores % 2 != 0).map(valores => valores * 2);
 console.log(`filter + map com Arrow Function ${metodosArrayCombin}`)
 
+// Desafio
 // Somar todos os numeros do arrayNumeros do jeito comum
 let soma = 0;
 // {
@@ -142,8 +142,10 @@ let soma = 0;
 // }
 // console.log('Iterando com for', soma)
 // }
-// Utilizando o Reduce para somar todos valores do ArrayNumeros
-/* Explicando reduce:
+// ___________________________________________________________________
+
+/* Método reduce():
+
 */ 
 const arrayNumeros1 =[10,2,8,11];
 const somaReduce = arrayNumeros1.reduce(function(valorAcumulador, valorArray){
@@ -152,8 +154,9 @@ const somaReduce = arrayNumeros1.reduce(function(valorAcumulador, valorArray){
 
 },0)
 console.log('Reduce',somaReduce);
+// ___________________________________________________________________________________________________
 
-// every: ele retorna um bolleano
+// Método every(): ele retorna um bolleano
 // Quando usar; quando precisar testar se todos elemento de um array pasam por um teste especifico
 
 //Checar se todos numero do array são maiores que 10
@@ -170,7 +173,6 @@ console.log('Arrow Func',todoMaiores)
 }
 // Mais um exemplo
 //Verificando se todos têm mais de 18 anos
-
 let pessoas = [ //Array de obejtos
     {id: 12, nome:'joao', idade: 15},
     {id: 19, nome:'pedro', idade: 27},
@@ -189,8 +191,9 @@ const marioresP = pessoas.every(pessoa => pessoa.idade >= 18)
 console.log('every com Arrow funct',marioresP)
 }
 
+//_________________________________________________________________________________________________________
 
-// some: ele intera o array e testa se pelos menos um elemento é verdadeiro para retorna true
+// Método some(): ele intera o array e testa se pelos menos um elemento é verdadeiro para retorna true
 //Verificar se a algum numero primo no array
 
 const arrayNumber = [6,8,11,14,42]
@@ -215,3 +218,14 @@ const person = [
 ]
 // Saindo com a respota direto no console.log
 console.log('Some com Arrow function',person.some(elemento => elemento.piloto));
+
+/* Método find(): Use find() quando: é preciso procurar/verificar 
+por um valor dentro de um array e retorno vai ser do primeiro elemento
+que satisfazer o teste
+*/ 
+const pizzas = ['Mussarela','Queijo','Calabresa', 'Portuguesa',
+'Frango Catupery']
+// Teste:  Procurar um array de pizzas um sabor que comece com P
+console.log(pizzas.find(function(encontrarSabor){
+    return encontrarSabor.startsWith('P'&&'C')
+}))
