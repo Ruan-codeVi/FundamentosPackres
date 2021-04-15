@@ -191,13 +191,27 @@ console.log('every com Arrow funct',marioresP)
 
 
 // some: ele intera o array e testa se pelos menos um elemento é verdadeiro para retorna true
-{
-const marioresP = pessoas.some(function(elemento){
-    return elemento.idade >= 18
-})
-console.log('some com funct call back',marioresP) 
-}
-// Com Arrow funct
-const marioresP = pessoas.some(elemento => elemento.idade >= 18)
-console.log('some com Arrow funct',marioresP)
+//Verificar se a algum numero primo no array
 
+const arrayNumber = [6,8,11,14,42]
+// criando a função que faz a lógico do numero primo 
+function ePrimo(valor){
+    for(let i = 2; i < valor; i++){
+        if(valor % i === 0){
+            return false
+        }
+    }
+    return valor > 1
+}
+const resultPrimo = arrayNumber.some(ePrimo)
+console.log('some com função declarada', resultPrimo)
+
+// Mais um exemplo: verificar um array utilizando pra ver se há piloto
+
+const person = [
+    {id:12, nome: 'Lucas', piloto: false},
+    {id:15, nome: 'Juan', piloto: true},
+    {id:10, nome: 'João', piloto: false}
+]
+// Saindo com a respota direto no console.log
+console.log('Some com Arrow function',person.some(elemento => elemento.piloto));
