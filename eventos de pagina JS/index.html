@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" onsubmit="">
+        <input type="text" name="nome" onfocus="focado()" onblur="desfocado()"> <br/> <br/>  <!-- onblur serve para quando sai o foco daquele elemento -->
+        <select name="cidades" onchange="opcaoSelect(this)" > <!-- onchange serve para captura o que foi alterado -->
+            <option >São Paulo</option>
+            <option >Rio de Janeiro</option>
+            <option >Rio Preto</option>
+            <option >Curitiba</option>
+        </select><br/> <br/>
+        <input type="submit" value="Enviar">
+    </form>
+    <script src="formulario.js"></script>
+</body>
+</html>
