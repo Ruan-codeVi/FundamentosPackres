@@ -21,7 +21,8 @@ console.log('[]',primeiroNome, segundoNome, idade, altura.toFixed(2), peso)
 console.log('[]', segundoNome)
 }
 /* Pode-se desconstruir quantos elementos quiser, basta seguir a ordem dos
-elementos do array original para a criação dos nomes da variaves
+elementos do array original para a criação dos nomes da variaves.
+* Não dá para desconstruir um por um, somente utilizando a posição do elemento no array original 
 */ 
 let [nome, sobreNome] = pessoa
 console.log(nome, sobreNome)
