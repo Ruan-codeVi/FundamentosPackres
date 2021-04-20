@@ -23,3 +23,8 @@ console.log(`obj pessoa ${nome} ${idade}`)
 
 let {sobreNome, cargo} = pessoa
 console.log(`obj pessoa ${sobreNome} ${cargo}`)
+
+// Como alterar e criar o nome que quiser na criação da variavel 
+
+let {cargo: profissao} = pessoa
+console.log(`Dando um nome diferente para a variavel: ${profissao}`)
