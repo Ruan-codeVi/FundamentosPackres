@@ -1,4 +1,6 @@
-// Operador Rest é sempre nos parametros das funções
+/*  Operador Rest é sempre usado nos parametros das funções, 
+ele que recebe o tamanho que for como argumento para a função.
+*/
 {
 function minhaLista(nomes){
     console.log(nomes)
