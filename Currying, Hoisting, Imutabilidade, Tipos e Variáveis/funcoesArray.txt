@@ -1,0 +1,65 @@
+Dicas JavaScript em funções de array Map, filter e Reduce
+
+*Arrow function com um parâmetro não precisa abrir parentese()
+da mesma forma que não precisa de chaves{} se tiver uma execução só ou seja uma instrução.
+
+Map serve para iterar array’s e gerar um novo array com base de array original
+*Pede uma função de callback como argumento.
+* Na função de callback permite três parâmetros item, índex, arr (arrayCompleto)
+Sendo item o mais comum de manipular
+Se tiver manipulando um array de objetos sempre vai ser item.propriedade para a manipular e escrever lógicas.
+Se for array de obj e for uma arrow function de uma linha, o retorno é imediato sem precisar colocar return, 
+se tiver usando função anonima é só retorna o parâmetro item.
+Exemplos: Arrow function
+Adicionando um novo atributo ‘curso’ no array de objetos pessoas
+const adicionarCurso = pessoas.map(item =>{
+  item.curso = ‘Introdução ao curso de JavaScript’
+  return item
+})
+Função Anonima
+const adicionarCurso = pessoas.map(function(item){
+item.curso = ‘Introdução ao curso de JavaScript’
+  return item
+})
+______________________________________________________________________________
+Filter Iterar array’s igual ao map mas como o nome já diz ele filtra o array original e retorna o um 
+array novo e  menor que o original.
+*Pede uma função de callback como argumento.
+* Na função de callback permite três parâmetros item, índex, arr (arrayCompleto)
+Sendo item o mais comum de manipular  que é usado como referência de iterador
+Se tiver manipulando um array de objetos sempre vai ser item.propriedades para a manipular e escrever lógicas.
+
+Exemplo: Arrow function
+Exerc: filtrando o array pessoas e retornando somente homens
+const homens = pessoas.filter(item => item.sexo === genero.Homem ) 
+console.log(‘\n Filtrando só homens do array pessoas com Arrow func. Usando filter’, homens)
+
+
+Reduce itera array’s   igual filter e map, mas tem o poder de transforma array’s em outros tipos: number, booleanos, strings etc..
+
+*Pede como primeiro argumento uma função de callback contendo a lógica da função, e como segundo argumento pede o valor inicial da primeira variável que foi passada como parâmetro na função de callback.
+
+*Na função callback o primeiro parâmetro passado é esse novo tipo que vai ser manipulado para retornar  uma variável nova contendo a lógica que foi aplicada, o segundo parâmetro é o *item(pode ter outros nomes) que usado como referencia de iterador depois podem vir índex, e arr como parâmetros.
+Exemplo: Arrow function
+Exerc: Somando todas a idades do array objetos pessoas
+const totaIdade = pessoas.reduce((somaIdades, item ) =>{
+	somaIdades= somaIdades + item.idade
+		ou
+	somaIdades+= item.idade
+
+  return  somaIdades
+},0)
+* somaIdades é a variável que gera o novo tipo, ela faz e armazena a lógica
+*0 após de chaves {} é o contador inicial da variável  somaIdades
+
+Juntando Funções de array
+Exemplo: Exerc: Filtrando a idades do array pessoas, somente idades pares e depois somando esse retorno de idades usando reduce para somar e transforma esse array em um number
+const filterAndRedceIdades = pessoas.filter(item => item.idade % 2 == 0)
+.reduce((somIdades, item) =>{
+	somaIdades = somaIdades + item.idade
+		ou
+	somaIdades+= item.idade
+
+return somaIdades
+},0)
+console.log(`\n filter  idades pares, reduce para somar idades e retornar um number:\n ${ filterAndRedceIdades}`)
