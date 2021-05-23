@@ -1,0 +1,50 @@
+Orientação a objetos em javascript ES6
+*Herança
+*Classes
+*Modificadores de Acesso
+*Encapsulamento
+*Static
+
+Herança em JS 
+A herança em Javascript é baseada em protótipos.
+* A variável prototype que armazena as definições dos objetos em Js
+
+Herança do Js por debaixo do panos
+
+No Exemplo:
+const meuTexto = ‘Hello prototype’
+console.log(meuTexto.__proto__.splite === String.prototype.splite)
+
+Quando foi criado uma const meuTexto igual a ‘Hello prototype’, o javascript está dizendo por baixo dos panos que o constructor da const meuTexto é uma String. E o proto de meuTexto é String.prototype
+meuTexto.constructor → String
+meuTexto.__proto__ →	String.prototype
+
+__proto__ →  prototype →  constructor
+ 
+__proto__ aponta para uma prototype que é criando a partir de uma função construtora(constructor)
+
+*Todo prototype(protótipo) é criado através de constructor(construtor)
+* E todo constructor cria um prototype
+
+Exemplo 2:
+function animal(){}
+console.log(animal.constructor)
+Quem é o construtor de aninal? R: função, porque?
+
+
+
+
+
+
+Explicando por baixo dos panos
+			
+				Cadeia de protot	ype
+
+A  função animal o constructor dessa função animal aponta para o construtor de funções que possui o function.prototype e constructor dele aponta para a função construtora object e possui o object.prototype que não tem nada porque é estrutura raiz do Js
+
+A função animal foi criada através construtor de funções, o construtor de funções possui seu próprio
+prototype porque foi criado pelo construtor object que tem seu prototype null
+
+Construtor	
+Constructor Object 			Constructor Function     Function animal()
+ -Object.prototype			-function.prototype	
