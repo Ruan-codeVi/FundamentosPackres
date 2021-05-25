@@ -48,3 +48,4 @@ prototype porque foi criado pelo construtor object que tem seu prototype null
 Construtor	
 Constructor Object 			Constructor Function     Function animal()
  -Object.prototype			-function.prototype	
+ 

@@ -1,0 +1,72 @@
+Design Patterns
+
+o que são: design Patterns ou padrões de projetos são soluções generalista para problemas recorrentes durante o desenvolvimento de um software. Não se trata de um framework ou um código pronto, mas de uma definição de alto nível de como um problema comum pode ser solucionado.
+
+Design Patterns mais utilizados no Javascrpit
+º Factory
+º Singleton
+º Decator
+º Observer
+º Module
+
+Factory: Todas as funções que retornam um objeto, sem a necessidade de chamá-las com o new, são consideradas funções factory(fabrica) .
+
+
+
+		    ESTE EXEMPLO NÃO É UMA FUNÇÃO FACTORY:
+				
+				function FakeUser(){
+				this.name: ‘Guilherme’,
+				this.lastName: ‘Cabrini’
+			}
+			const user = new FakeUser();
+
+
+
+
+				EXEMPLO DE FACTORY:
+			
+			function FakeUser(){
+			return {
+				this.name: ‘Guilherme’,
+				this.lastName: ‘Cabrini’
+			     }
+			
+		          }
+		          const user = FakeUser()
+
+
+
+
+
+Singleton: O objetivo desse pattern é criar uma única instância de uma função
+construtora e retorná-la toda vez em que for necessário utilizá-la
+
+Exemplo:  function MyApp(){
+	if(!MyApp.instance){
+	 MyApp.instance = this;
+     }
+	return MyApp.instance
+}
+	
+const App = MyApp() 
+
+
+
+Decarator	: Uma função decarator recebe uma outra função como parâmetro e estende
+o seu comportamento sem modificá-la explicitamente.
+
+Exemplo: function readOnly(target, name, description){
+		description.writable = false
+		return description
+}
+class job{
+@readOnly
+	title(){
+	return ‘CEO’
+     }
+}	
+
+Observer: É um pattern muito popular em aplicações javascript. 
+A instância(subscriber) mantém uma coleção de objetos (observers) 
+e notifica todos eles quando ocorre mudança de estado.
