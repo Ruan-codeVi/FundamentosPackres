@@ -60,6 +60,6 @@ const somaPesoIdade = animals.reduce((total, animal) =>{
         totalIdade: total.totalIdade + animal.idade,
         totalPeso: total.totalPeso + animal.peso
     }
-// argumento para o reduce
+// argumento do reduce com os valores iniciais
 },{totalIdade:0, totalPeso:0})
-console.log('\nRetornando do array animals e criando um novo obj.\n', somaPesoIdade)
+console.log('\nRetornando do array animals, criando um novo obj com esses retornos.\n', somaPesoIdade)
