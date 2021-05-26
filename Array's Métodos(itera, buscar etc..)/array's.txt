@@ -1,0 +1,6 @@
+* Como criar um array
+* inserir ou remover itens 
+* iterar elementos
+* Buscar elementos
+* Ordenar elementos
+* Transformar um array em um outro tipo de dado
