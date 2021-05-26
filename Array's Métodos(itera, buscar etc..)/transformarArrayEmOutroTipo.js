@@ -21,3 +21,45 @@ let mediaNota = estudantes.reduce((media, aluno)=>{
     return(media = media + aluno.nota)},0) / estudantes.length
 
 console.log('\nSomando todas a notas do array estudantes e fazendo a Média',mediaNota)
+
+
+
+// Criando um novo obj de um array de objts
+const animals = [
+{
+    nome:'zorro',
+    tipo: 'Cachorro',
+    idade: 8,
+    peso: 35
+},
+{
+    nome:'listrada',
+    tipo: 'Vaca',
+    idade: 5,
+    peso: 400
+},{
+    nome:'trovão',
+    tipo: 'Cavalo',
+    idade: 12,
+    peso: 280
+},
+{
+    nome:'quack',
+    tipo: 'Pato',
+    idade: 2 ,
+    peso: 3
+},
+{
+    nome:'Gerivalda',
+    tipo: 'Galinha',
+    idade: 1,
+    peso: 1
+}]
+const somaPesoIdade = animals.reduce((total, animal) =>{
+    return{
+        totalIdade: total.totalIdade + animal.idade,
+        totalPeso: total.totalPeso + animal.peso
+    }
+// argumento para o reduce
+},{totalIdade:0, totalPeso:0})
+console.log('\nRetornando do array animals e criando um novo obj.\n', somaPesoIdade)
