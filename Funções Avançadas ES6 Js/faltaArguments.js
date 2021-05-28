@@ -16,7 +16,7 @@ e como não foi passado o segundo argumento ele vai ser undefined,
 
 
 /*          COMO ERA RESOLVIDO, PARA GARANTIR QUE OS VALORES DOS ARGUMENTOS 
-        FUNCIONA-SEM CORRETAMENTE ANTES DE SURGIR O ES6 
+        FUNCIONASSEM CORRETAMENTE ANTES DE SURGIR O ES6 
 */
 
 // 1º forma produz um outro erro quando é passado os dois argumentos mas o b recbendo valor 0 
@@ -60,7 +60,9 @@ function newMulti(a, b = 1){
 // const randoNu = Math.floor(Math.random()*100)
 // console.log(randoNu)
 
-// Atribuindo uma função como valor padrão de um parâmetro
+/* Atribuindo uma função como valor padrão de um parâmetro toda vez que esse argumento não for passado 
+e ficar como undefined. Isso é chamado de lazy evaluation
+*/
 function numberRandon(){
     
     return Math.floor( Math.random() * 10)
