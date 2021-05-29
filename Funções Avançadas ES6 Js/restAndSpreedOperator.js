@@ -72,6 +72,8 @@ console.log('\n',newNumbArr)
 /* Spread em objetos literais, só pode ser usado para copiar chaves e valores de outros objetos
  para construir um novo objeto
 */
+
+// Obj literal
 let object = {
     prop: 123
 }
