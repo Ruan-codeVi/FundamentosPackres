@@ -24,10 +24,32 @@ como os itens  vem de um array e vão ser armazenados em variaveis,
 
 // Destructuring
 let [maca1, banana1, laranja1,[tomate1]] = frutas
-console.log('Após Es6, Destructuring',maca1)
+console.log('\nApós Es6, Destructuring',maca1)
 console.log('Após Es6, Destructuring',banana1)
 console.log('Após Es6, Destructuring',laranja1)
 console.log('Após Es6, Destructuring',tomate1)
+
+
+// Objetos
+
+// *Se quisesse pegar algum atributo do obj e salvar em uma variável
+
+// ANTES DE ES6
+
+let obj ={
+    name: 'Astra'
+}
+
+let name1 = obj.name
+console.log('\n Antes do ES6,',name1)
+
+// DEPOS DO ES6
+let obj1 ={
+    nome: 'Eren'
+}
+let{nome} = obj1
+console.log('\n Depois do ES6,', nome)
+
 
 
 
