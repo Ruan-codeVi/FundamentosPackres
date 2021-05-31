@@ -68,8 +68,14 @@ console.log(oneDatePromisse)
 
 //encadeando promisses
 oneDatePromisse().then((dados)=> {
-    console.log('\nPrimeiro then da promisse ondeDate,',dados);
+    console.log('\nPrimeiro, then da promisse ondeDate,',dados);
     return twoDatePromisse()
-}).then((dados2) => console.log('\nSegundo then que é retornado de primeira promisse,',dados2))
+}).then((dados2) => console.log('\nSegundo, then da segunda promisse que é invocado na primeira promisse,',dados2))
 .catch(error => console.log('Ops!',error))
-// ponto catch é tratamento para caso algumas das promisses de erro
+// ponto catch é o tratamento de erro para caso algumas das promisses não funcione
+
+
+// Execução de promisses em paralelo(juntas)
+Promise.all([oneDatePromisse(), twoDatePromisse()]).then(dados=>
+    console.log('\nExecução de promisses em paralelo',dados))
+    .catch(erro => console.log('Ops!',erro))
