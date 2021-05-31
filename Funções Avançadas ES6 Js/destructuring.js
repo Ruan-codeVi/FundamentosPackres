@@ -43,7 +43,7 @@ let obj ={
 let name1 = obj.name
 console.log('\n Antes do ES6,',name1)
 
-// DEPOS DO ES6
+// DEPOIS DO ES6
 let obj1 ={
     nome: 'Eren'
 }
@@ -58,11 +58,14 @@ console.log('\n Depois do ES6,', nome)
 let pessoa = {
     nome:'juan',
     prop: {
-        idade: 28
+        idade: 28,
+       coresFavoritas: ['Rosa', 'Roxo']
     }
 }
 let idade = pessoa.prop.idade
+let cor1 = pessoa.prop.coresFavoritas[0]
 console.log('\n Objeto dentro de objeto, Antes do ES6,',idade)
+console.log('\n Array dentro de objeto, Antes do Es6,', cor1)
 
 
 // APOS DO ES6
@@ -97,10 +100,50 @@ let maria ={
     }
 }    //prop     //obj //renoneado prop          //destruibdo o array  
 let {sobrenome, obj2:{idade: anos, coresFavoritas:[corFav1, corFav2]}} = maria
-console.log('\ndestructuring em arrays que estão em obj,',sobrenome,anos, corFav1)
-console.log('destructuring em arrays que estão em obj,',corFav2)
+console.log('\nDestructuring em arrays que estão em obj,',sobrenome,anos, corFav1)
+console.log('Destructuring em arrays que estão em obj,',corFav2)
 
 
+// ANTES DO ES6, PEGANDO UM ATRIBUTO DE ARRAY DE OBJ
+
+const arrObj = [{nome: 'João', tipo:'Pessoa'}]
+const novaPessoa = arrObj[0].nome
+console.log('\nPegando um atributo e salvando em uma variavel, Antes do ES6,',novaPessoa)
+
+
+
+// DEPOIS DO ES6, PEGANDO UM ATRIBUTO DE ARRAY DE OBJ - Destructuring
+
+const arrObj1 = [{nome1: 'João1', tipo1:'Pessoa1'}]
+const [{nome1}] = arrObj1 // poderia dar um novo nome pra variavel const [{nome1: newNome}]
+console.log('\nPegando um atributo e salvando em uma variavel, Depois do ES6,',nome1)
+
+
+// Passando um array como referencia de parametro da uma função
+
+// ANTES DO ES6
+function soma(arr){
+    let a = arr[0]
+    let b = arr[1]
+    return  a + b
+}
+console.log('\nPassando array como parametro,',soma([5,2]))
+
+// APOS O ES6 - Usando o destructuring
+                    //default values
+function soma1([a,b] = [0,0]){ // pode-se usar com default values tambem
+    return a + b
+}
+console.log('\nDestructuring no parametro araay,',soma1())
+console.log('\nDestructuring no parametro array,',soma1([5,5]))
+
+
+// Passando um objeto como referencia de parametro da uma função
+
+function multi({a,b}){
+   return a * b
+}
+console.log('\nObjeto no parametro da função, usando destructuring, ',multi({a: 5, b: 10 }))
 
 
 

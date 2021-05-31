@@ -24,7 +24,7 @@ let obj1 = {
 }
 console.log('\nshort hand no obj literal',obj1)
 
-// Short hand também com método
+// Short hand também com método sendo uma função externa
 
 function saudacao(){
     console.log('\nOlá mundo, função externa do obj')
