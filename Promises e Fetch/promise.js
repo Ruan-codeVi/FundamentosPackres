@@ -77,7 +77,7 @@ oneDatePromise().then((dados)=> {
     return twoDatePromise()
 }).then((dados2) => console.log('\nSegundo, then da segunda promise que é invocado na primeira promise,',dados2))
 .catch(error => console.log('Ops!',error))
-// ponto .catch é o tratamento de erro para caso algumas das promisses não funcione
+// ponto .catch e um método de promises, ele faz o tratamento de erros para caso algumas das promisses não funcione
 
 
 // EXECUÇÃO de promises EM PARALELO(juntas)
@@ -85,7 +85,7 @@ Promise.all([oneDatePromise(), twoDatePromise()]).then(dados=>
     console.log('\nExecução de promisses em paralelo',dados))
     .catch(erro => console.log('Ops!',erro))
 
-// EXECUTAR A PRIMEIRA promise RESOLVIDA
+// RETORNAR A PRIMEIRA promise RESOLVIDA
 Promise.race([oneDatePromise(), twoDatePromise()]).then(dados=>
     console.log('\n Race retorna a primeira promise resolvida,',dados))
     .catch(erro => console.log('Ops!',erro))
